@@ -23,7 +23,6 @@ public class Sukamon : Character
 
     public override float Heal() // Método Heal() para Sukamon
     {
-        // Se cura un tercio del daño que hace Sukamon
         float healAmount = Attack() / 3f; // La curación es un tercio del daño
 
         health += healAmount; // Se aumenta la salud

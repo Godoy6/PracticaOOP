@@ -11,6 +11,16 @@ public abstract class Character : MonoBehaviour
 
     protected float _damage; // Atributo protegido
 
+    public void SetName(string name)
+    {
+        _name = name;
+    }
+
+    public string GetName()
+    {
+        return _name;
+    }
+
     public void SetUpCharacterDefault() // Constructor por defecto
     {
         _name = "Default";
@@ -38,20 +48,5 @@ public abstract class Character : MonoBehaviour
             health = 100f; // Si la salud pasa de 100, la ajustamos a 100
         }
         return health;
-    }
-
-    public string GetName() 
-    {
-        return _name;
-    }
-
-    public Sprite GetSprite()
-    {
-        return _sprite;
-    }
-
-    public float GetDamage()
-    {
-        return _damage;
     }
 }

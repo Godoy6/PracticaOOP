@@ -23,7 +23,6 @@ public class Goblin : Character
 
     public override float Heal() // Sobrescribir el método Heal()
     {
-        // El Goblin se cura la mitad del daño que hace
         float healAmount = Attack() / 2f; // La curación es la mitad del daño
         health += healAmount;
 
