@@ -54,14 +54,4 @@ public abstract class Character : MonoBehaviour
     {
         return _damage;
     }
-
-    void Start()
-    {
-
-    }
-
-    void Update()
-    {
-
-    }
 }
