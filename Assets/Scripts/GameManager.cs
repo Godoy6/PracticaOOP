@@ -1,32 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI; // Necesario para trabajar con UI (Dropdown, InputField, Button)
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager instance; // Instancia estática para implementar el patrón Singleton
+    public static GameManager instance; // Instancia estática del GameManager
+
+    public string playerName; // Nombre del jugador
+    public enum CharacterType { Cowboy, Wizard }
+    public CharacterType selectedClass; // Clase seleccionada por el jugador
 
     void Awake()
     {
-        /*SINGLETON*/
-        if (!instance) // Si la instancia aún no existe
+        // Implementar patrón Singleton
+        if (!instance)
         {
-            instance = this; // Asigna esta instancia a la variable estática
-            DontDestroyOnLoad(gameObject); // Hace que el objeto no se destruya al cargar una nueva escena
+            instance = this;
+            DontDestroyOnLoad(gameObject); // No destruir el GameManager al cargar nuevas escenas
         }
         else
         {
-            Destroy(gameObject); // Si ya existe una instancia, destruye este objeto
+            Destroy(gameObject); // Destruir el objeto si ya existe una instancia
         }
     }
 
-    void Start()
+    public void SetPlayerName(string name)
     {
-
+        playerName = name; // Guardar el nombre del jugador
     }
 
-    void Update()
+    public void SetPlayerClass(CharacterType characterType)
     {
-
+        selectedClass = characterType; // Guardar la clase seleccionada
     }
 }
