@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Sukamon : Character
 {
-    public Sukamon() // Constructor de Sukamon (con 1 de daño por defecto)
+    public Sukamon() // Constructor de "Sukamon" (con 1 de daño por defecto)
     {
-        _damage = 1f; // El daño por defecto para Sukamon es 1
+        _damage = 1f; // El daño por defecto para "Sukamon" es 1
     }
 
-    public override float Attack() // Método Attack() para Sukamon
+    public override float Attack() // Método "Attack()" para Sukamon
     {
-        if (health < 5f) // Si la salud de Sukamon es menor a 5, hace 100 de daño
+        if (health < 5f) // Si la salud de "Sukamon" es menor a 5, hace 100 de daño
         {
-            return 100f; // Hace 100 de daño
+            return 100f; // Hace 100 de daño cuando la salud es crítica
         }
         else
         {
@@ -21,16 +21,16 @@ public class Sukamon : Character
         }
     }
 
-    public override float Heal() // Método Heal() para Sukamon
+    public override float Heal() // Método "Heal()" para "Sukamon"
     {
-        float healAmount = Attack() / 3f; // La curación es un tercio del daño
+        float healAmount = Attack() / 3f; // La curación es un tercio del daño hecho
 
-        health += healAmount; // Se aumenta la salud
+        health += healAmount; // Aumentamos la salud con la cantidad calculada
 
         if (health > 100f) // Nos aseguramos de que la salud no supere el máximo de 100
         {
-            health = 100f;
+            health = 100f; // Ajustamos la salud a 100 si excede el máximo
         }
-        return health;
+        return health; // Devolvemos la salud actual
     }
 }

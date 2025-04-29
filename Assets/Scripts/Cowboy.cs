@@ -7,22 +7,23 @@ public class Cowboy : Character
     public Cowboy(string name) // Constructor de Cowboy (con 15 de daño por defecto)
     {
         SetName(name); // Usamos el setter para establecer el nombre
-        _damage = 15f; // Accedemos directamente a _damage porque es protegido
+        _damage = 15f; // Accedemos directamente a "_damage" porque es protegido
     }
 
-    public override float Attack() // Método Attack() sobrescrito para Cowboy
+    public override float Attack() // Método "Attack()" sobrescrito para "Cowboy"
     {
-        float randomMultiplier = Random.Range(1f, 1.5f);
-        return _damage * randomMultiplier; // Accedemos directamente a _damage porque es protegido
+        float randomMultiplier = Random.Range(1f, 1.5f); // Generamos un multiplicador aleatorio entre 1 y 1.5
+        return _damage * randomMultiplier; // Accedemos directamente a "_damage" porque es protegido
     }
 
-    public override float Heal() // Método Heal() sobrescrito para Cowboy
+    public override float Heal() // Método "Heal()" sobrescrito para "Cowboy"
     {
-        health += 10f;
-        if (health > 100f)
+        health += 10f; // Aumentamos la salud en 10 puntos
+
+        if (health > 100f) // Nos aseguramos de que la salud no supere el máximo (100)
         {
-            health = 100f;
+            health = 100f; // Si la salud pasa de 100, la ajustamos a 100
         }
-        return health;
+        return health; // Devolvemos la salud actual
     }
 }

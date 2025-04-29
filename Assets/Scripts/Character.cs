@@ -4,40 +4,38 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    public float health = 100f; // Atributo público
-
-    private Sprite _sprite; // Atributo privado
-    private string _name; // Atributo privado
-
-    protected float _damage; // Atributo protegido
+    public float health = 100f;
+    private Sprite _sprite;
+    private string _name;
+    protected float _damage;
 
     public void SetName(string name)
     {
-        _name = name;
+        _name = name; // Asigna el nombre al personaje
     }
 
     public string GetName()
     {
-        return _name;
+        return _name; // Devuelve el nombre del personaje
     }
 
     public void SetUpCharacterDefault() // Constructor por defecto
     {
-        _name = "Default";
-        _sprite = null;
-        _damage = 10f;
-        health = 100f;
+        _name = "Default"; // Nombre por defecto
+        _sprite = null; // Sin imagen por defecto
+        _damage = 10f; // Daño por defecto
+        health = 100f; // Salud por defecto
     }
 
     public void SetUpCharacterParameters(string name, Sprite spr, float damage) // Constructor con parámetros
     {
-        _name = name;
-        _sprite = spr;
-        _damage = damage;
-        health = 100f;
+        _name = name; // Asigna el nombre
+        _sprite = spr; // Asigna la imagen
+        _damage = damage; // Asigna el daño
+        health = 100f; // Salud inicial
     }
 
-    public abstract float Attack(); // Método abstracto
+    public abstract float Attack(); // Método abstracto que debe ser implementado en las clases hijas
 
     public virtual float Heal()
     {
@@ -47,6 +45,6 @@ public abstract class Character : MonoBehaviour
         {
             health = 100f; // Si la salud pasa de 100, la ajustamos a 100
         }
-        return health;
+        return health; // Devuelve la salud actual
     }
 }

@@ -9,11 +9,11 @@ public class Goblin : Character
         _damage = 10f; // El daño por defecto para un Goblin es 10
     }
 
-    public override float Attack() // Sobrescribir el método Attack()
+    public override float Attack() // Sobrescribir el método "Attack()"
     {
         if (health < 20f) // Si la salud del Goblin es menor a 20, hace el triple de daño
         {
-            return _damage * 3f; // Hace el triple de daño
+            return _damage * 3f; // Hace el triple de daño si la salud es baja
         }
         else
         {
@@ -21,15 +21,15 @@ public class Goblin : Character
         }
     }
 
-    public override float Heal() // Sobrescribir el método Heal()
+    public override float Heal() // Sobrescribir el método "Heal()"
     {
-        float healAmount = Attack() / 2f; // La curación es la mitad del daño
-        health += healAmount;
+        float healAmount = Attack() / 2f; // La curación es la mitad del daño producido
+        health += healAmount; // Aumentamos la salud con la cantidad curada
 
         if (health > 100f) // Nos aseguramos de que la salud no sobrepase 100
         {
-            health = 100f;
+            health = 100f; // Ajustamos la salud a 100 si excede el máximo
         }
-        return health;
+        return health; // Devolvemos la salud actual
     }
 }
